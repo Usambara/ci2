@@ -3,6 +3,12 @@ aaa_authorization:
     default: local
 aaa_root:
   disabled: true
+banners:
+  motd: 'You shall not pass. Unless you are authorized. Then you shall pass.
+
+    EOF
+
+    '
 config_end: true
 daemon_terminattr:
   cvaddrs:
@@ -88,6 +94,15 @@ local_users:
   sha512_password: $6$12d178df28bcb649$uDv1yHCt1Fj88nNd5ppKgOTrS8l9eLU534c6fplrLwgwQi7bP9AmzXJuOjJyv0EsqO6b.6O4eWwUbL4rv9Okw1
   ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCkt5sJrvWSTk4B+G3YO8pJIHuhO0jtLDJjwaDXhBqU0qW/UdsbfaNyr+K1wf4mvA0AodY8YkaarS5xUw4AFWk+zAuN34ZVh21pFvf8LA78bAa4Qgzx7sD9ik0Mk1Xqz4psYljDBbNVCTxKvZTx29NtVvRhFqOIvryTwhLcOopzDW4FXTAzrowo87dqVl7nVV2pHeSW6uD1w574zkbnUA8K/xwzUBAb5d5yzEeq0al1TDnhd3UPSIvvF5B35YQdqhxnlZM99UmmK11qHZ2RrOYr15fIDsBCCe02IbZ4vWMrsCrCOJMUdDBXlR67z0vAmFdsjH1X+D5tP5FXX9W+i0Rx
     arista@avd-workshop-brisbane-21-dec73129-eos
+logging:
+  vrfs:
+  - name: default
+    source_interface: Management0
+    hosts:
+    - name: 10.200.0.108
+      protocol: udp
+    - name: 10.200.1.108
+      protocol: udp
 management_api_http:
   enable_https: true
   enable_vrfs:
